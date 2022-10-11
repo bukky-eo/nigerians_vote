@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> {
             Colors.green,
           ],
           stops: [
-            0.3,
+            0.2,
             0.5,
-            0.7,
+            0.8,
           ],
         ),
       ),

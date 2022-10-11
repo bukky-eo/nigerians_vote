@@ -110,10 +110,31 @@ class VoteBrain {
   }
 
   bool buttonShouldBeVisible() {
-    if (voteNumber == 1 || voteNumber == 2 || voteNumber == 0) {
-      return true;
-    } else {
+    if (getChoice3() == '' && voteNumber == 1 ||
+        getChoice2() == '' && voteNumber == 1 ||
+        getChoice3() == '' && voteNumber == 2 ||
+        // getChoice2() == '' && voteNumber == 2 ||
+        getChoice3() == '' && voteNumber == 3 ||
+        getChoice2() == '' && voteNumber == 3 ||
+        getChoice3() == '' && voteNumber == 5 ||
+        getChoice2() == '' && voteNumber == 5 ||
+        getChoice3() == '' && voteNumber == 6 ||
+        getChoice2() == '' && voteNumber == 6 ||
+        getChoice3() == '' && voteNumber == 7 ||
+        getChoice2() == '' && voteNumber == 7 ||
+        getChoice3() == '' && voteNumber == 8 ||
+        getChoice2() == '' && voteNumber == 8) {
       return false;
+    } else {
+      return true;
+    }
+  }
+
+  bool showToast() {
+    bool isVisible = true;
+    if (isVisible) {
+      isVisible = !isVisible;
+      return isVisible;
     }
   }
 }

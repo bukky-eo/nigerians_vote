@@ -21,16 +21,8 @@ class _ChoicesState extends State<Choices> {
       width: screenWidth,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [
-            Colors.green,
-            Colors.white,
-            Colors.green,
-          ],
-          stops: [
-            0.3,
-            0.5,
-            0.7,
-          ],
+          colors: [Colors.green, Colors.white, Colors.green],
+          stops: [0.2, 0.5, 0.8],
         ),
       ),
       child: Scaffold(
@@ -44,44 +36,52 @@ class _ChoicesState extends State<Choices> {
               Center(
                 child: Text(
                   voteBrain.getStory(),
-                  style: TextStyle(
-                    fontSize: 25.0,
-                  ),
+                  style:
+                      TextStyle(fontSize: 25.0, color: Colors.green.shade900),
                   textAlign: TextAlign.center,
                 ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 25.0,
               ),
-              SubmitButtons(
-                onTap: () {
-                  setState(() {
-                    voteBrain.nextStory(1);
-                  });
-                },
-                text: voteBrain.getChoice1(),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              SubmitButtons(
-                onTap: () {
-                  setState(() {
-                    voteBrain.nextStory(2);
-                  });
-                },
-                text: voteBrain.getChoice2(),
+              Visibility(
+                // visible: voteBrain.buttonShouldBeVisible(),
+                child: SubmitButtons(
+                  onTap: () {
+                    setState(() {
+                      voteBrain.nextStory(1);
+                    });
+                  },
+                  text: voteBrain.getChoice1(),
+                ),
               ),
               SizedBox(
-                height: 20.0,
+                height: 25.0,
               ),
-              SubmitButtons(
-                onTap: () {
-                  setState(() {
-                    voteBrain.nextStory(3);
-                  });
-                },
-                text: voteBrain.getChoice3(),
+              Visibility(
+                // visible: voteBrain.buttonShouldBeVisible(),
+                child: SubmitButtons(
+                  onTap: () {
+                    setState(() {
+                      voteBrain.nextStory(2);
+                    });
+                  },
+                  text: voteBrain.getChoice2(),
+                ),
+              ),
+              SizedBox(
+                height: 25.0,
+              ),
+              Visibility(
+                // visible: voteBrain.buttonShouldBeVisible(),
+                child: SubmitButtons(
+                  onTap: () {
+                    setState(() {
+                      voteBrain.nextStory(3);
+                    });
+                  },
+                  text: voteBrain.getChoice3(),
+                ),
               ),
             ],
           ),

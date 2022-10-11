@@ -13,7 +13,7 @@ class SubmitButtons extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(12),
         width: double.infinity,
-        height: 55,
+        height: 60,
         decoration: BoxDecoration(
             gradient: const LinearGradient(
                 begin: Alignment.bottomRight,
