@@ -11,22 +11,24 @@ class SubmitButtons extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
+        padding: EdgeInsets.all(12),
         width: double.infinity,
         height: 55,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomLeft,
-              // stops: [.5, .3],
-              colors: [
-                Colors.white,
-                Colors.green,
-                Colors.white,
-              ],
-              tileMode: TileMode.mirror),
-        ),
+        decoration: BoxDecoration(
+            gradient: const LinearGradient(
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+                colors: [
+                  Colors.green,
+                  Colors.white,
+                  Colors.green,
+                ],
+                tileMode: TileMode.mirror),
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Colors.green.shade900, width: 2.5)),
         child: Text(
           text,
+          textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
